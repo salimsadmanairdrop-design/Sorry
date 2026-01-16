@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Tasnim 💔</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+  overflow:hidden;
+}
+.card{
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+  padding:30px;
+  border-radius:25px;
+  max-width:350px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+h1{
+  font-size:32px;
+  margin-bottom:15px;
+}
+p{
+  font-size:17px;
+  line-height:1.6;
+}
+button{
+  margin-top:25px;
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  background:#fff;
+  color:#ff4d6d;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{
+  transform:scale(1.1);
+}
+.heart{
+  font-size:50px;
+  animation:beat 1s infinite;
+  margin:15px 0;
+}
+@keyframes beat{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.3);}
+  100%{transform:scale(1);}
+}
+
+/* floating hearts */
+.float{
+  position:fixed;
+  bottom:-20px;
+  animation:floatUp linear forwards;
+  font-size:20px;
+}
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-120vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h1>I'm Sorry Tasnim 💔</h1>
+  <div class="heart">❤️</div>
+  <p>
+    Ami jani tumi rag kore acho 😔<br>
+    Ami mon theke sorry bolchi.<br>
+    Tumi amar sobcheye dami manush.<br>
+    Please amake maf kore dao 💖
+  </p>
+
+  <button onclick="forgive()">Forgive Me 🥺</button>
+</div>
+
+<script>
+function forgive(){
+  document.getElementById("card").innerHTML = `
+    <h1>Thank You 😭❤️</h1>
+    <div class="heart">💕</div>
+    <p>
+      Tumi rag chere dilei amar duniya thik hoye jay.<br>
+      I love you so much Tasnim 💖<br><br>
+      — Shoron
+    </p>
+  `;
+}
+
+// floating hearts
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="float";
+  h.innerHTML="💗";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=20+Math.random()*20+"px";
+  h.style.animationDuration=6+Math.random()*6+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),12000);
+},400);
+</script>
+
+</body>
+</html>; }
+  100% { left:120%;  top:25%; }
+}
+.rose {
+  position: fixed;
+  width: 35px;
+  animation: fall 12s linear forwards;
+  z-index: 1;
+}
+@keyframes fall {
+  from { top:-60px; opacity:1; }
+  to   { top:120vh; opacity:0; }
+}
+.firework {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: explode 1.4s ease-out forwards;
+}
+@keyframes explode {
+  to {
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+#finalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 1s;
+  pointer-events: none;
+}
+#finalOverlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#finalOverlay h1 { font-size: 40px; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+
+<audio id="music" loop>
+  <source src="ehsaas.mp3" type="audio/mpeg">
+</audio>
+
+<section id="welcome" class="active">
+  <h1>Welcome My Love ❤️</h1>
+  <h2>Tasnim</h2>
+  <button id="btnWelcome">Enter My Heart 💖</button>
+</section>
+
+<section id="letter">
+  <div class="card">
+    <h2>My Dearest Tasnim 💌</h2>
+    <p>You are my calm in chaos, my forever.</p><br>
+    <p>Since February 13, my heart belongs to you.</p><br>
+    <p>I love you endlessly.</p>
+  </div>
+  <button id="btnLetter">Next ❤️</button>
+</section>
+
+<section id="counter">
+  <h2>Our Love Since 💕</h2>
+  <div class="counter" id="time"></div>
+  <button id="btnCounter">Your Smile 📸</button>
+</section>
+
+<section id="photos">
+  <div class="slider">
+    <img src="tasnim1.jpg" class="active">
+    <img src="tasnim2.jpg">
+    <img src="tasnim3.jpg">
+  </div>
+  <p style="margin-top:15px;">My favorite view 💖</p>
+  <button id="btnPhotos">Forever 🤍</button>
+</section>
+
+<section id="final">
+  <h1>Will You Stay With Me Forever? 💍</h1>
+  <div class="heart">❤️</div>
+  <button id="btnFinal">YES 💕</button>
+</section>
+
+<div id="finalOverlay">
+  <h1>I Love You Forever 💖</h1>
+  <p>— Shoron</p>
+</div>
+
+<script>
+// Elements
+const music = document.getElementById('music');
+const sections = document.querySelectorAll('section');
+const finalOverlay = document.getElementById('finalOverlay');
+
+const btnWelcome = document.getElementById('btnWelcome');
+const btnLetter  = document.getElementById('btnLetter');
+const btnCounter = document.getElementById('btnCounter');
+const btnPhotos  = document.getElementById('btnPhotos');
+const btnFinal   = document.getElementById('btnFinal');
+
+// Show section function
+function showSection(id) {
+  sections.forEach(s => s.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (target) target.classList.add('active');
+  music.play().catch(() => {}); // autoplay may need user interaction first time
+}
+
+// Button handlers
+btnWelcome.onclick = () => showSection('letter');
+btnLetter.onclick  = () => showSection('counter');
+btnCounter.onclick = () => showSection('photos');
+btnPhotos.onclick  = () => showSection('final');
+btnFinal.onclick   = () => finalMagic();
+
+// Counter (started Feb 13, 2025)
+const startDate = new Date("2025-02-13T11:14:00");
+setInterval(() => {
+  const d = new Date() - startDate;
+  if (d < 0) {
+    document.getElementById("time").innerHTML = "Counting moments to forever ❤️";
+    return;
+  }
+  const days = Math.floor(d / 86400000);
+  const h = Math.floor(d / 3600000) % 24;
+  const m = Math.floor(d / 60000) % 60;
+  const s = Math.floor(d / 1000) % 60;
+  document.getElementById("time").innerHTML = `${days} Days ${h}h ${m}m ${s}s ❤️`;
+}, 1000);
+
+// Photo slider
+let slides = document.querySelectorAll(".slider img");
+let current = 0;
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 3500);
+
+// Floating hearts
+setInterval(() => {
+  let h = document.createElement('div');
+  h.innerHTML = "💕";
+  h.className = 'float';
+  h.style.left = Math.random()*100 + 'vw';
+  h.style.bottom = '-20px';
+  h.style.fontSize = (20 + Math.random()*30) + 'px';
+  h.style.animationDuration = (10 + Math.random()*8) + 's';
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 18000);
+}, 400);
+
+// Falling roses
+setInterval(() => {
+  let r = document.createElement('img');
+  r.src = 'https://i.ibb.co/F4s7v3t/rose.png';
+  r.className = 'rose';
+  r.style.left = Math.random()*100 + 'vw';
+  document.body.appendChild(r);
+  setTimeout(() => r.remove(), 13000);
+}, 700);
+
+// Butterfly
+let b = document.createElement('img');
+b.src = 'https://i.ibb.co/9WVb4sv/butterfly.png';
+b.className = 'butterfly';
+document.body.appendChild(b);
+
+// Final magic
+function finalMagic() {
+  btnFinal.style.display = 'none';
+  finalOverlay.classList.add('show');
+  
+  const interval = setInterval(() => {
+    for(let j = 0; j < 25; j++) {
+      let f = document.createElement('div');
+      f.className = 'firework';
+      f.style.left = Math.random()*window.innerWidth + 'px';
+      f.style.top = Math.random()*window.innerHeight/2 + 'px';
+      f.style.background = `hsl(${Math.random()*360},100%,70%)`;
+      f.style.setProperty('--x', (Math.random()*400 - 200) + 'px');
+      f.style.setProperty('--y', (Math.random()*400 - 200) + 'px');
+      document.body.appendChild(f);
+      setTimeout(() => f.remove(), 1400);
+    }
+  }, 400);
+  
+  setTimeout(() => clearInterval(interval), 5000);
+}
+</script>
+</body>
+</html>
